@@ -4,15 +4,15 @@ export default function LessonCard({ lesson, index, onOpen }) {
   return (
     <motion.div
       className="lessonCard"
-      initial={{ opacity: 0, y: 35 }}
+      initial={{ opacity: 0, y: 28 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.08 }}
-      whileHover={{ scale: 1.03, rotate: -1 }}
+      transition={{ delay: index * 0.04 }}
+      whileHover={{ scale: 1.025 }}
+      whileTap={{ scale: 0.98 }}
       onClick={onOpen}
     >
       <div className="cardTop">
         <span>{lesson.category}</span>
-        <small>{lesson.time}</small>
       </div>
 
       <h3>{lesson.title}</h3>
