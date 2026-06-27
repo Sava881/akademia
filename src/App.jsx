@@ -5,7 +5,14 @@ import LessonCard from "./components/LessonCard";
 import LessonModal from "./components/LessonModal";
 
 export default function App() {
-  const [selectedLesson, setSelectedLesson] = useState(null);
+const [selectedLesson, setSelectedLesson] = useState(null);
+const [learnedLessons, setLearnedLessons] = useState([]);
+
+function markLessonAsLearned(id) {
+  if (!learnedLessons.includes(id)) {
+    setLearnedLessons([...learnedLessons, id]);
+  }
+}
 
   return (
     <div className="app">
@@ -36,21 +43,24 @@ export default function App() {
 
         <div className="grid">
           {lessons.map((lesson, index) => (
-            <LessonCard
-              key={lesson.id}
-              lesson={lesson}
-              index={index}
-              onOpen={() => setSelectedLesson(lesson)}
-            />
+<LessonCard
+  key={lesson.id}
+  lesson={lesson}
+  index={index}
+  isLearned={learnedLessons.includes(lesson.id)}
+  onOpen={() => setSelectedLesson(lesson)}
+/>
           ))}
         </div>
       </main>
 
       {selectedLesson && (
-        <LessonModal
-          lesson={selectedLesson}
-          onClose={() => setSelectedLesson(null)}
-        />
+<LessonModal
+  lesson={selectedLesson}
+  isLearned={learnedLessons.includes(selectedLesson.id)}
+  onLearned={() => markLessonAsLearned(selectedLesson.id)}
+  onClose={() => setSelectedLesson(null)}
+/>
       )}
     </div>
   );

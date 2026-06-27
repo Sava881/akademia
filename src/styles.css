@@ -281,3 +281,126 @@ button {
     padding: 18px;
   }
 }
+
+.lessonCardLearned {
+  background: linear-gradient(145deg, #1f3b2a, #142318);
+  border-color: rgba(39, 214, 108, 0.65);
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.38),
+    0 0 30px rgba(39, 214, 108, 0.18);
+}
+
+.lessonCardLearned::before {
+  background: #27d66c;
+}
+
+.doneBadge,
+.modalDone {
+  background: #27d66c !important;
+  color: #07130b !important;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.modalHeader {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: linear-gradient(145deg, #292929, #141414);
+  border-bottom: 1px solid rgba(255, 209, 0, 0.22);
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.modalBody {
+  padding: 20px 22px;
+  overflow-y: auto;
+}
+
+.modalFooter {
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  padding: 16px 22px 20px;
+  background: linear-gradient(145deg, #1c1c1c, #111);
+  border-top: 1px solid rgba(255, 209, 0, 0.18);
+}
+
+.modalLearned {
+  border-color: rgba(39, 214, 108, 0.65);
+  box-shadow: 0 30px 80px rgba(39, 214, 108, 0.16);
+}
+
+.mainBtnLearned {
+  background: #27d66c;
+  color: #07130b;
+}
+
+.confettiBox {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.confetti {
+  position: absolute;
+  top: 20px;
+  width: 8px;
+  height: 14px;
+  background: #ffd100;
+  animation: confettiFall 1.6s ease-out forwards;
+}
+
+.confetti:nth-child(3n) {
+  background: #27d66c;
+}
+
+.confetti:nth-child(4n) {
+  background: #ffffff;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(520px) rotate(420deg);
+    opacity: 0;
+  }
+}
+
+.confetti-1 { left: 5%; animation-delay: 0s; }
+.confetti-2 { left: 10%; animation-delay: .05s; }
+.confetti-3 { left: 15%; animation-delay: .1s; }
+.confetti-4 { left: 20%; animation-delay: .02s; }
+.confetti-5 { left: 25%; animation-delay: .12s; }
+.confetti-6 { left: 30%; animation-delay: .04s; }
+.confetti-7 { left: 35%; animation-delay: .08s; }
+.confetti-8 { left: 40%; animation-delay: .15s; }
+.confetti-9 { left: 45%; animation-delay: .03s; }
+.confetti-10 { left: 50%; animation-delay: .09s; }
+.confetti-11 { left: 55%; animation-delay: .14s; }
+.confetti-12 { left: 60%; animation-delay: .06s; }
+.confetti-13 { left: 65%; animation-delay: .11s; }
+.confetti-14 { left: 70%; animation-delay: .01s; }
+.confetti-15 { left: 75%; animation-delay: .07s; }
+.confetti-16 { left: 80%; animation-delay: .13s; }
+.confetti-17 { left: 85%; animation-delay: .05s; }
+.confetti-18 { left: 90%; animation-delay: .1s; }
+.confetti-19 { left: 95%; animation-delay: .03s; }
+.confetti-20 { left: 12%; animation-delay: .16s; }
+.confetti-21 { left: 32%; animation-delay: .18s; }
+.confetti-22 { left: 52%; animation-delay: .2s; }
+.confetti-23 { left: 72%; animation-delay: .17s; }
+.confetti-24 { left: 88%; animation-delay: .19s; }

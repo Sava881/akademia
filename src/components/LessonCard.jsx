@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
-export default function LessonCard({ lesson, index, onOpen }) {
+export default function LessonCard({ lesson, index, isLearned, onOpen }) {
   return (
     <motion.div
-      className="lessonCard"
+      className={`lessonCard ${isLearned ? "lessonCardLearned" : ""}`}
       initial={{ opacity: 0, y: 28 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.04 }}
@@ -13,6 +13,7 @@ export default function LessonCard({ lesson, index, onOpen }) {
     >
       <div className="cardTop">
         <span>{lesson.category}</span>
+        {isLearned && <span className="doneBadge">Изучено</span>}
       </div>
 
       <h3>{lesson.title}</h3>
@@ -20,7 +21,7 @@ export default function LessonCard({ lesson, index, onOpen }) {
 
       <div className="cardBottom">
         <span>{lesson.level}</span>
-        <button>Изучить</button>
+        <button>{isLearned ? "Повторить" : "Изучить"}</button>
       </div>
     </motion.div>
   );
