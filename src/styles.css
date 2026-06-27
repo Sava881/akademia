@@ -1,0 +1,239 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #080808;
+  color: white;
+}
+
+.app {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(255, 209, 0, 0.25), transparent 35%),
+    linear-gradient(135deg, #050505, #151515);
+}
+
+.hero {
+  padding: 34px 18px 28px;
+  background:
+    linear-gradient(135deg, rgba(255, 209, 0, 0.22), rgba(255, 0, 0, 0.08)),
+    url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1400&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.66);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.brand {
+  display: inline-block;
+  padding: 8px 14px;
+  background: #ffd100;
+  color: #111;
+  font-weight: 900;
+  letter-spacing: 1px;
+  transform: skew(-8deg);
+}
+
+h1 {
+  font-size: 42px;
+  margin: 18px 0 10px;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.hero p {
+  color: #e7e7e7;
+  font-size: 17px;
+  max-width: 620px;
+}
+
+.stats {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.stats div {
+  background: rgba(0, 0, 0, 0.72);
+  border: 1px solid rgba(255, 209, 0, 0.45);
+  padding: 14px;
+  border-radius: 16px;
+  min-width: 110px;
+}
+
+.stats b {
+  display: block;
+  font-size: 24px;
+  color: #ffd100;
+}
+
+.stats span {
+  color: #bdbdbd;
+  font-size: 13px;
+}
+
+.content {
+  padding: 24px 16px 80px;
+}
+
+.content h2 {
+  font-size: 26px;
+  margin-bottom: 18px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+  gap: 16px;
+}
+
+.lessonCard {
+  background: linear-gradient(145deg, #171717, #0c0c0c);
+  border: 1px solid rgba(255, 209, 0, 0.25);
+  border-radius: 22px;
+  padding: 18px;
+  cursor: pointer;
+  min-height: 240px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  position: relative;
+  overflow: hidden;
+}
+
+.lessonCard::before {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  right: -60px;
+  top: -60px;
+  background: #ffd100;
+  filter: blur(70px);
+  opacity: 0.28;
+}
+
+.cardTop,
+.cardBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTop span,
+.cardBottom span,
+.modalCategory {
+  background: #ffd100;
+  color: #111;
+  font-weight: 800;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.cardTop small {
+  color: #aaa;
+}
+
+.lessonCard h3 {
+  font-size: 22px;
+  margin: 28px 0 12px;
+  position: relative;
+}
+
+.lessonCard p {
+  color: #cfcfcf;
+  line-height: 1.45;
+  position: relative;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.cardBottom button,
+.mainBtn {
+  background: #ffd100;
+  color: #111;
+  padding: 11px 16px;
+  border-radius: 14px;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  z-index: 50;
+}
+
+.modal {
+  background: #111;
+  border: 1px solid rgba(255, 209, 0, 0.35);
+  border-radius: 26px;
+  padding: 22px;
+  max-width: 620px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+}
+
+.closeBtn {
+  float: right;
+  background: #222;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 12px;
+}
+
+.modal h2 {
+  margin-top: 18px;
+  font-size: 30px;
+}
+
+.modal p,
+.modal li {
+  color: #d6d6d6;
+  line-height: 1.55;
+}
+
+.modal h3 {
+  color: #ffd100;
+  margin-top: 22px;
+}
+
+.mainBtn {
+  width: 100%;
+  margin-top: 18px;
+  font-size: 16px;
+  padding: 15px;
+}
+
+@media (max-width: 520px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  .stats {
+    flex-direction: column;
+  }
+}
