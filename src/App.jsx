@@ -22,11 +22,9 @@ export default function App() {
             инструмент, работа на объекте и общение с клиентом.
           </p>
 
-          <div className="stats">
-            <div><b>{lessons.length}</b><span>уроков</span></div>
-            <div><b>6</b><span>направлений</span></div>
-            <div><b>100%</b><span>практика</span></div>
-          </div>
+<div className="stats">
+  <div><b>{lessons.length}</b><span>уроков</span></div>
+</div>
         </motion.div>
       </header>
 

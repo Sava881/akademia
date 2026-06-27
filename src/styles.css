@@ -20,10 +20,8 @@ body {
 .hero {
   padding: 38px 18px 32px;
   background:
-    linear-gradient(135deg, rgba(255, 209, 0, 0.3), rgba(0, 0, 0, 0.6)),
-    url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1400&auto=format&fit=crop");
-  background-size: cover;
-  background-position: center;
+    radial-gradient(circle at top left, rgba(255, 209, 0, 0.25), transparent 35%),
+    linear-gradient(135deg, #2a2a2a, #151515);
   position: relative;
   border-bottom: 1px solid rgba(255, 209, 0, 0.22);
 }
@@ -254,10 +252,10 @@ button {
     padding: 28px 14px 24px;
   }
 
-  .stats {
-    grid-template-columns: 1fr;
-    max-width: 100%;
-  }
+.stats {
+  grid-template-columns: 1fr;
+  max-width: 220px;
+}
 
   .grid {
     grid-template-columns: 1fr;
