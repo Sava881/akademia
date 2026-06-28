@@ -3,10 +3,12 @@ import { motion } from "framer-motion";
 import { lessons } from "./data/lessons";
 import LessonCard from "./components/LessonCard";
 import LessonModal from "./components/LessonModal";
+import WorkChat from "./components/WorkChat";
 
 export default function App() {
 const [selectedLesson, setSelectedLesson] = useState(null);
 const [learnedLessons, setLearnedLessons] = useState([]);
+const [isChatOpen, setIsChatOpen] = useState(false);
 
 function markLessonAsLearned(id) {
   if (!learnedLessons.includes(id)) {
@@ -29,17 +31,20 @@ function markLessonAsLearned(id) {
             инструмент, работа на объекте и общение с клиентом.
           </p>
 
-<div className="stats">
-  <div><b>{lessons.length}</b><span>уроков</span></div>
-</div>
+<button className="chatOpenBtn heroChatBtn" onClick={() => setIsChatOpen(true)}>
+  Спросить помощника
+</button>
+
         </motion.div>
       </header>
 
       <main className="content">
-        <div className="sectionTitle">
-          <h2>Обучающие карточки</h2>
-          <p>Выбери урок, изучи порядок действий и частые ошибки.</p>
-        </div>
+<div className="sectionTitle">
+  <div>
+    <h2>Обучающие карточки</h2>
+    <p>Выбери урок, изучи порядок действий и частые ошибки.</p>
+  </div>
+</div>
 
         <div className="grid">
           {lessons.map((lesson, index) => (
@@ -62,6 +67,14 @@ function markLessonAsLearned(id) {
   onClose={() => setSelectedLesson(null)}
 />
       )}
+
+      {isChatOpen && (
+        <WorkChat
+          lessons={lessons}
+          onClose={() => setIsChatOpen(false)}
+        />
+      )}
+
     </div>
   );
 }
